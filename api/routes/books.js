@@ -11,9 +11,15 @@ router.get('/',(req ,res,next)=>{
 
 
 router.post('/',(req ,res,next)=>{
+    const books={
+        name:req.body.name,
+        price: req.body.price
+    };
+
 
     res.status(200).json({
-        message:'handling POST reqest to /books'
+        message:'handling POST reqest to /books',
+        createdBook:books
     });
 });
 
