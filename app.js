@@ -3,7 +3,8 @@ const app = express();
 const bodyParser=require('body-parser');
 const booksRoutes = require('./api/routes/books');
 const morgan = require('morgan');
-
+const mongoose=require('mongoose');
+mongoose.connect('mongodb://usr_db:pass_db@ds219040.mlab.com:19040/computer_books');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:true}));
