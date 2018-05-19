@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="include/style.css">
+    <title>Book store API</title>
+</head>
+
+<body>
+    <header>
+        <nav class="top_nav">
+            <div class="nav_wrapper">
+
+                <section class="main_logo">
+                    <a href="#">
+                        Book Store Developers
+
+                    </a>
+
+
+
+                </section>
+                <ul class="main_menu">
+                    <li>
+                        <a href="#overview">overview</a>
+                    </li>
+                    <li>
+                        <a href="#">get started</a>
+                    </li>
+                    <li>
+                        <a href="#">github</a>
+                    </li>
+                    <li>
+                        <a href="#">more</a>
+                    </li>
+
+                </ul>
+                <section class="user">
+                    <section class="user_profile">
+
+                        <a href="#">LOGIN</a>
+                        <a href="#">SIGNUP</a>
+                    </section>
+
+                </section>
+
+
+
+                <section id="hamburger">
+
+                    <input type="checkbox" />
+
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+
+                    <ul id="hamburger_menu">
+                        <li>
+                            <a href="#">
+                                Book Store Developers
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">overview</a>
+                        </li>
+                        <li>
+                            <a href="#">get started</a>
+                        </li>
+                        <li>
+                            <a href="#">github</a>
+                        </li>
+                        <li>
+                            <a href="#">more</a>
+                        </li>
+                        <li>
+
+                            <a href="#">LOGIN</a>
+                        </li>
+                        <li>
+                            <a href="#">SIGNUP</a>
+                        </li>
+
+
+                    </ul>
+                </section>
+            </div>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="main_section_outer">
+            <section>
+                <h1>Book Store Documntion API</h1>
+            </section>
+            <section class="main_section">
+                <ul>
+                    <li>
+                        <a href="http://">overview</a>
+                    </li>
+                    <li>
+                        <a href="http://">get started</a>
+                    </li>
+                    <li>
+                        <a href="http://">github</a>
+                    </li>
+                    <li>
+                        <a href="http://">more</a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+
+
+        <section class="secondary_section" id="overview">
+            <div class="wrapper">
+                <section >
+                    <h1>
+                        Overview
+                    </h1>
+
+                </section>
+                <section>
+
+                    <p>
+                        The book store API created to provide information for Developers on how intract with the book store service.
+                        <br> provided requests: GET / POST / DELETE / PUT . in case of POST user can send JSON file with the
+                        supplied structure .
+                        <br> The result will return in JSON File.
+                        <br> if the URL is not found you will get 404 response .
+                        <br> in case of an error in a JSON you will get JSON file with the error (validation ec.) and a 500 response.
+                        <br>
+
+                    </p>
+                </section>
+            </div>
+        </section>
+
+
+        <section class="third_section">
+            <div class="wrapper">
+                <section>
+                    <h1>
+                        Get Started
+                    </h1>
+
+                </section>
+                <section>
+                    <h2>
+                        get all books function
+                    </h2>
+                    <h3>
+                        you can chek find all book:
+                    </h3>
+
+                    <blockquote>
+                        http://localhost:3000/books
+                        <span class="request">GET request</span>
+                    </blockquote>
+                    <h3>
+                        the result would be of tybe JSON in this sturture:
+                    </h3>
+                    <pre> 
+                    <blockquote>
+{
+    "books": [{
+         "_id": "5aff311892b6be424c1edd78",
+         "name": "c/c++",
+         "price": 15,
+         "request": {
+           "types": "GET",
+           "url": "http://localhost:3000/books/5aff311892b6be424c1edd78"
+            }
+        }]
+}
+                    </blockquote>
+                    </pre>
+
+                </section>
+
+
+
+                <section>
+                    <h2>
+                        get all books function
+                    </h2>
+                    <h3>
+                        you can chek find all book:
+                    </h3>
+
+                    <blockquote>
+                        http://localhost:3000/books
+                        <span class="request">GET request</span>
+                    </blockquote>
+                    <h3>
+                        the result would be of tybe JSON in this sturture:
+                    </h3>
+                    <pre> 
+                        <blockquote>
+{
+    "books": [{
+         "_id": "5aff311892b6be424c1edd78",
+         "name": "c/c++",
+         "price": 15,
+         "request": {
+            "types": "GET",
+            "url": "http://localhost:3000/books/5aff311892b6be424c1edd78"
+             }
+        }]
+}
+                        </blockquote>
+                        </pre>
+
+                </section>
+
+
+
+
+
+
+
+                <section>
+                    <h2>
+                        get all books function
+                    </h2>
+                    <h3>
+                        you can chek find all book:
+                    </h3>
+
+                    <blockquote>
+                        http://localhost:3000/books
+                        <span class="request">GET request</span>
+                    </blockquote>
+                    <h3>
+                        the result would be of tybe JSON in this sturture:
+                    </h3>
+                    <pre> 
+                            <blockquote>
+        {
+            "books": [{
+                 "_id": "5aff311892b6be424c1edd78",
+                 "name": "c/c++",
+                 "price": 15,
+                 "request": {
+                   "types": "GET",
+                   "url": "http://localhost:3000/books/5aff311892b6be424c1edd78"
+                    }
+                }]
+        }
+                            </blockquote>
+                            </pre>
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
