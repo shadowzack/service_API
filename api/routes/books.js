@@ -14,7 +14,7 @@ router.get('/',(req ,res,next)=>{
                     price:book.price,
                     request:{
                         types:'GET',
-                        url:'http://localhost:3000/books/'+book._id
+                        url:'https://computer-store-service.herokuapp.com/books/'+book._id
                     }
                 }
             })
