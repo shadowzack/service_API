@@ -10,6 +10,10 @@ const bookSchema = mongoose.Schema({
     price: {
         type: Number,
         required: true
+    },
+    author: {
+        awards: String,
+        name: String
     }
 });
 

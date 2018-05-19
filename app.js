@@ -1,30 +1,31 @@
 const express = require('express');
 const app = express();
-const bodyParser=require('body-parser');
+const bodyParser = require('body-parser');
 const booksRoutes = require('./api/routes/books');
 const morgan = require('morgan');
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://usr_db:pass_db@ds219040.mlab.com:19040/computer_books');
 
 app.use(morgan('dev'));
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 
-//cors
-app.use((req,res,next)=>{
-        res.header('Access-Control-Allow-Origin','*');
-        res.header('Access-Control-Allow-Headers',
-    "Origin,X-Resquested-With,Content-Tybe,Accept,Authorization"
+//cors to allow access 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers',
+        "Origin,X-Resquested-With,Content-Tybe,Accept,Authorization"
     );
-    if(req.method ==='OPTIONS'){
-        res.header('Access-Control-Allow-Methods','PUT,POST,GET,DELETE');
+    if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE');
         return res.status(200).json({});
     }
     next();
 });
 
 app.use('/books', booksRoutes);
-
 
 //handling page not found error
 app.use((req, res, next) => {
@@ -33,7 +34,6 @@ app.use((req, res, next) => {
     next(error);
 
 });
-
 
 //handling rest of errors
 app.use((error, req, res, next) => {
@@ -44,6 +44,5 @@ app.use((error, req, res, next) => {
         }
     });
 });
-
 
 module.exports = app;
