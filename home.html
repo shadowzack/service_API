@@ -134,12 +134,12 @@
 
                     <p>
                         The book store API created to provide information for Developers on how intract with the book store service.
-                        <br> provided requests: GET / POST / DELETE / PUT . in case of POST user can send JSON file with the
-                        supplied structure .
+                        <br> provided requests: GET / POST / DELETE . in case of POST user can send JSON file with the supplied
+                        structure .
                         <br> The result will return in JSON File.
                         <br> if the URL is not found you will get 404 response .
                         <br> in case of an error in a JSON you will get JSON file with the error (validation ec.) and a 500 response.
-                        <br>
+                        <br> in case of success you will get json with success message and 200 response
 
                     </p>
                 </section>
@@ -160,27 +160,38 @@
                         get all books function
                     </h2>
                     <h3>
-                        you can chek find all book:
+                        you can find all books with this request:
                     </h3>
 
                     <blockquote>
-                        http://localhost:3000/books
+                        https://computer-store-service.herokuapp.com/books
                         <span class="request">GET request</span>
                     </blockquote>
+                    <h5>
+                        _id: you can use id for GET resquest to get specific book
+                        <br> and because developers are always bored you can just press
+                        <br> the link to arive to the book page with this specific id
+                        <br>
+                    </h5>
                     <h3>
-                        the result would be of tybe JSON in this sturture:
+
+                        the result is a JSON in this sturture:
                     </h3>
                     <pre> 
                     <blockquote>
 {
     "books": [{
-         "_id": "5aff311892b6be424c1edd78",
-         "name": "c/c++",
-         "price": 15,
-         "request": {
-           "types": "GET",
-           "url": "http://localhost:3000/books/5aff311892b6be424c1edd78"
-            }
+        "_id": "5b00b8fab76dd657d80e261d",
+        "name": "c/c++",
+        "price": 20,
+        "author": {
+            "name": "mahmod",
+            "awards": "winnner"
+            },
+            "request": {
+                "types": "GET",
+                "url": "https://computer-store-service.herokuapp.com/books/5b00b8fab76dd657d80e261d"
+                }
         }]
 }
                     </blockquote>
@@ -192,34 +203,57 @@
 
                 <section>
                     <h2>
-                        get all books function
+                        Create new book function
                     </h2>
                     <h3>
-                        you can chek find all book:
+                        you can create a new book:
                     </h3>
 
                     <blockquote>
-                        http://localhost:3000/books
-                        <span class="request">GET request</span>
+                        https://computer-store-service.herokuapp.com/books
+                        <span class="request">POST request</span>
                     </blockquote>
+                    <h5>
+                        you must supply a name and price and author name and wards
+                        <br> you must fill all feilds (all feilds are required)
+                        <br>
+                    </h5>
                     <h3>
-                        the result would be of tybe JSON in this sturture:
+                        the JSON you supply must be in this sturture:
                     </h3>
                     <pre> 
                         <blockquote>
 {
-    "books": [{
-         "_id": "5aff311892b6be424c1edd78",
-         "name": "c/c++",
-         "price": 15,
-         "request": {
-            "types": "GET",
-            "url": "http://localhost:3000/books/5aff311892b6be424c1edd78"
-             }
-        }]
+    "name": "introduction to algorthims",
+    "price": 15,
+    "author": {
+        "name": "mahmod",
+        "awards": "best education book"
+    }
 }
                         </blockquote>
                         </pre>
+
+                    <h3>
+                        the JSON you get in case of success :
+                    </h3>
+                    <pre> 
+                                <blockquote>
+{
+    "message": "book created successfully",
+    "createdBook": {
+        "author": {
+            "name": "mahmod",
+            "awards": "best education book"
+            },
+        "_id": "5b018f6698e64740682a303c",
+        "name": "introduction to algorthims",
+        "price": 15,
+        "__v": 0
+    }
+}
+                                </blockquote>
+                                </pre>
 
                 </section>
 
@@ -231,50 +265,156 @@
 
                 <section>
                     <h2>
-                        get all books function
+                        get books by author name and price function
                     </h2>
                     <h3>
-                        you can chek find all book:
+                        you can find all books that have the same price an author:
                     </h3>
 
                     <blockquote>
-                        http://localhost:3000/books
+                        https://computer-store-service.herokuapp.com/books/:authorName/:price
                         <span class="request">GET request</span>
                     </blockquote>
                     <h3>
-                        the result would be of tybe JSON in this sturture:
+                        the result is a JSON in this sturture:
                     </h3>
                     <pre> 
                             <blockquote>
-        {
-            "books": [{
-                 "_id": "5aff311892b6be424c1edd78",
-                 "name": "c/c++",
-                 "price": 15,
-                 "request": {
-                   "types": "GET",
-                   "url": "http://localhost:3000/books/5aff311892b6be424c1edd78"
-                    }
-                }]
-        }
+{
+    "result": [{
+        "author": {
+            "name": "mahmod",
+            "awards": "best education book"
+        },
+        "_id": "5b018f6698e64740682a303c",
+        "name": "introduction to algorthims",
+        "price": 15,
+        "__v": 0
+    }]
+}
                             </blockquote>
                             </pre>
 
                 </section>
 
 
+                <section>
+                    <h2>
+                        get book by id function
+                    </h2>
+                    <h3>
+                        you can find a book by id with this request:
+                    </h3>
+
+                    <blockquote>
+                        https://computer-store-service.herokuapp.com/books/:book_id
+                        <span class="request">GET request</span>
+                    </blockquote>
+                    <h3>
+
+                        the result is a JSON in this sturture:
+                    </h3>
+                    <pre> 
+                        <blockquote>
+                              
+{
+    "result": {
+        "author": {
+            "name": "mahmod",
+            "awards": "winnner"
+        },
+        "_id": "5b00b8fab76dd657d80e261d",
+        "name": "c/c++",
+        "price": 20,
+        "__v": 0
+    }
+}                          
+                        </blockquote>
+                        </pre>
+
+                </section>
 
 
 
+                <section>
+                    <h2>
+                        Delete book by id
+                    </h2>
+                    <h3>
+                        you can find all books that have the same price an author:
+                    </h3>
+
+                    <blockquote>
+                        https://computer-store-service.herokuapp.com/books/:book_id
+                        <span class="request">DELETE request</span>
+                    </blockquote>
+                    <h3>
+                        the result in case of success is a JSON in this sturture:
+                    </h3>
+                    <pre> 
+                                <blockquote>
+{
+    "n": 1,
+    "opTime": {
+        "ts": "6557685320278605825",
+        "t": 1
+    },
+    "electionId": "7fffffff0000000000000001",
+    "ok": 1
+}
+                                </blockquote>
+                                </pre>
+
+                </section>
 
 
 
+                <section>
+                    <h2>
+                        get book by id function POST version
+                    </h2>
+                    <h3>
+                        you can find a book by id with this request:
+                    </h3>
 
+                    <blockquote>
+                        https://computer-store-service.herokuapp.com/books/findPOST
+                        <span class="request">POST request</span>
+                    </blockquote>
+                    <h3>
 
+                        the supplied JSON must be in this sturture:
+                    </h3>
+                    <pre> 
+                                <blockquote>
+                                      
+{
+    "_id":"5b00b8fab76dd657d80e261d"
+                                        
+}                         
+                                </blockquote>
+                                </pre>
+                    <h3>
 
+                        the result is a JSON in this sturture:
+                    </h3>
+                    <pre> 
+                            <blockquote>
+                                  
+{
+    "author": {
+        "name": "mahmod",
+        "awards": "winnner"
+    },
+    "_id": "5b00b8fab76dd657d80e261d",
+    "name": "c/c++",
+    "price": 20,
+    "__v": 0
+}                          
+                            </blockquote>
+                            </pre>
 
-
-
+                </section>
 
             </div>
         </section>
